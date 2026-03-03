@@ -1,6 +1,10 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+/* Rule Order:  Moved para up here so .small-para is picked */
+.para {
+  font-size: 22px;
+}
 
 .para,
 .small-para {
@@ -13,23 +17,23 @@ body {
   font-weight: 800;
 }
 
-.para {
-  font-size: 22px;
-}
-
-.confirm {
-  background: green;
-  color: white;
-  font-weight: bold;
-} 
-
+/* Chaining selector: Added .confirm to .button */
 .button {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   font-size: 20px;
 }
 
-.child {
+.confirm.button {
+  background: green;
+  color: white;
+  font-weight: bold;
+} 
+
+
+/*Problem: This DIRECT TARGETING of text child is winning over div.text */
+/* add .text to .child  */
+.child.text {
   color: rgb(0, 0, 0);
   font-weight: 800;
   font-size: 14px;

@@ -5,10 +5,47 @@ body {
   margin: 0;
   overflow: hidden;
   font-family: Roboto, sans-serif;
+  /* stack items vertically */
+  /* stick footer to bottom using .content{flex: 1;} */
+  display: flex;
+  flex-direction: column;
+}
+
+.header, .footer{
+  /* separate left and right links for both footer and header*/
+  display: flex;
+  justify-content: space-between;
+}
+
+ul { 
+  /* use ul type selector to target both links */
+  /* remove bullet pts */
+  list-style-type: none;
+  display: flex; /* make items side by side */
+  gap: 8px;
+  padding: 16px;
+  margin: 8px;
+}
+
+a {
+  /* target anchor tag specifically to remove underline decoration */
+  /* grey font color */
+  text-decoration: none;
+  color: grey;
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center image */
+  justify-content: center; /* center the png and search bar etc. */
+  flex: 1; /* stick footer to bottom */
+  text-align: center; /* centers the image */
+  gap: 16px; /* gap between png and search bar */
 }
 
 img {
-  width: 600px;
+  width: 600px; 
 }
 
 button {
@@ -16,6 +53,9 @@ button {
   border: none;
   border-radius: 8px;
   background: #eee;
+  /* separate buttons from img, and slightly enlarge them */
+  padding: 10px;
+  margin-top: 16px;
 }
 
 input {
@@ -23,4 +63,9 @@ input {
   border-radius: 16px;
   padding: 8px 24px;
   width: 400px;
+}
+
+.footer {
+  /* create grey background */
+  background-color: lightgray;
 }
